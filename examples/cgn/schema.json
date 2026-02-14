@@ -1,0 +1,3 @@
+{
+  "prompt_description": "从文本中抽取命名实体，包括：人名（Person）、地点（Location）、组织（Organization）。"
+}

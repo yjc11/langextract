@@ -1,0 +1,18 @@
+[
+  {
+    "text": "大阪の山田さんはソニーに入社しました。",
+    "extractions": [
+      { "extraction_class": "Location", "extraction_text": "大阪" },
+      { "extraction_class": "Person", "extraction_text": "山田" },
+      { "extraction_class": "Organization", "extraction_text": "ソニー" }
+    ]
+  },
+  {
+    "text": "東京出身の田中さんはGoogleで働いています。",
+    "extractions": [
+      { "extraction_class": "Location", "extraction_text": "東京" },
+      { "extraction_class": "Person", "extraction_text": "田中" },
+      { "extraction_class": "Organization", "extraction_text": "Google" }
+    ]
+  }
+]

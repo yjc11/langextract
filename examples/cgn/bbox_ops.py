@@ -166,6 +166,8 @@ class BBoxOps:
         """
         if len(bboxes) == 0:
             return []
+        if isinstance(bboxes, list):
+            bboxes = np.array(bboxes)
 
         rc_values = BBoxOps.rearrange_boxes(bboxes, texts, align_mode)
 
@@ -173,7 +175,10 @@ class BBoxOps:
         reordered_bboxes = []
         previous_row_index = -1
         for rc_value in rc_values:
-            if rc_value.row_index != previous_row_index:
+            if previous_row_index == -1:
+                reordered_texts = texts[rc_value.idx]
+                reordered_bboxes = [bboxes[rc_value.idx]] * len(texts[rc_value.idx])
+            elif rc_value.row_index != previous_row_index:
                 reordered_texts += '\n' + texts[rc_value.idx]
                 reordered_bboxes += [None] + [bboxes[rc_value.idx]] * len(texts[rc_value.idx])
             else:

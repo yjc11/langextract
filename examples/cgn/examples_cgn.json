@@ -1,0 +1,159 @@
+[
+    {
+        "text": "公称尺寸 DN700\n压力等级 150Lb\n工作压力 1.2\n设计压力 1.2\n壳体强度试验压力 MPa\n（保压时间≥10min） 3.0\n壳体密封试验压力 3.0\n（保压时间≥10min） （表压）\n密封试验压力 1.32\n（保压时间≥10min）\n阀瓣试验压力 3\n（保压时间≥10min）\n适用温度 <120℃\n试验介质 B级水\n适用介质 海水\n流量系数 Cv 9790\n阀体最小壁厚 16.1 mm\n最小开启压差 0.05 MPa\n接管尺寸 0711×9.53 mm\nHAFJ0066等级 sC-3 抗震等级 SSE10)\n质保等级 Q1 采购质保等级 Cla\n屏障物项分级 NC 功能物项分级(可运行性） F-Sc1\n清洁度等级 C 功恤物项分级(完整性) L",
+        "extractions": [
+            {
+                "extraction_class": "功能位置编码",
+                "extraction_text": "1SEC1109VE"
+            },
+            {
+                "extraction_class": "功能位置编码",
+                "extraction_text": "1SEC1110VE"
+            },
+            {
+                "extraction_class": "功能位置编码",
+                "extraction_text": "1SEC2109VE"
+            },
+            {
+                "extraction_class": "功能位置编码",
+                "extraction_text": "1SEC2110VE"
+            },
+            {
+                "extraction_class": "功能位置编码",
+                "extraction_text": "1SEC3109VE"
+            },
+            {
+                "extraction_class": "功能位置编码",
+                "extraction_text": "2SEC1109VE"
+            },
+            {
+                "extraction_class": "功能位置编码",
+                "extraction_text": "2SEC1110VE"
+            },
+            {
+                "extraction_class": "功能位置编码",
+                "extraction_text": "2SEC2109VE"
+            },
+            {
+                "extraction_class": "功能位置编码",
+                "extraction_text": "2SEC2110VE"
+            },
+            {
+                "extraction_class": "功能位置编码",
+                "extraction_text": "2SEC3109VE"
+            },
+            {
+                "extraction_class": "供货RIN码",
+                "extraction_text": "NQNRBC0700PQW"
+            },
+            {
+                "extraction_class": "采购RIN码",
+                "extraction_text": "NAN-BC0700--"
+            },
+            {
+                "extraction_class": "重量",
+                "extraction_text": "2357.01±235.7kg"
+            },
+            {
+                "extraction_class": "阀门本体重量",
+                "extraction_text": "1963.21±196.3kg（去除配对法兰及紧固件）"
+            },
+            {
+                "extraction_class": "EOMM编码",
+                "extraction_text": "ANX42EOM001W90F45SS"
+            },
+            {
+                "extraction_class": "阀门入口口径",
+                "extraction_text": "DN700"
+            },
+            {
+                "extraction_class": "压力等级",
+                "extraction_text": "150Lb"
+            },
+            {
+                "extraction_class": "工作压力",
+                "extraction_text": "1.2"
+            },
+            {
+                "extraction_class": "设计压力",
+                "extraction_text": "1.2"
+            },
+            {
+                "extraction_class": "壳体强度试验压力（保压时间≥10mm）",
+                "extraction_text": "3.0"
+            },
+            {
+                "extraction_class": "壳体密封试验压力（保压时间≥10mm）",
+                "extraction_text": "3.0"
+            },
+            {
+                "extraction_class": "密封试验压力（保压时间≥10min）",
+                "extraction_text": "1.32"
+            },
+            {
+                "extraction_class": "阀瓣试验压力（保压时间≥10min）",
+                "extraction_text": "3"
+            },
+            {
+                "extraction_class": "适用温度",
+                "extraction_text": "<120℃"
+            },
+            {
+                "extraction_class": "试验介质",
+                "extraction_text": "B级水"
+            },
+            {
+                "extraction_class": "流体介质",
+                "extraction_text": "海水"
+            },
+            {
+                "extraction_class": "设计要求流量系数",
+                "extraction_text": "9790"
+            },
+            {
+                "extraction_class": "阀体最小壁厚",
+                "extraction_text": "16.1"
+            },
+            {
+                "extraction_class": "最小开启压差",
+                "extraction_text": "0.05"
+            },
+            {
+                "extraction_class": "入口接管外径",
+                "extraction_text": "∅711×9.53"
+            },
+            {
+                "extraction_class": "核安全等级（阀门本体）",
+                "extraction_text": "SC-3"
+            },
+            {
+                "extraction_class": "抗震要求",
+                "extraction_text": "SSE1（O)"
+            },
+            {
+                "extraction_class": "物项质保等级",
+                "extraction_text": "Q1"
+            },
+            {
+                "extraction_class": "采购质保等级",
+                "extraction_text": "C1a"
+            },
+            {
+                "extraction_class": "屏障物项分级",
+                "extraction_text": "NC"
+            },
+            {
+                "extraction_class": "功能物项分级（可运行性）",
+                "extraction_text": "F-SC1"
+            },
+            {
+                "extraction_class": "清洁度等级",
+                "extraction_text": "C"
+            },
+            {
+                "extraction_class": "功能物项分级（完整性）",
+                "extraction_text": "/"
+            }
+        ]
+    }
+]

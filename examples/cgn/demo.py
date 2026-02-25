@@ -143,17 +143,23 @@ def run_extraction(
     )
 
 
-def load_ocr_json(ocr_json_path: Path):
+def load_material_list_json(ocr_json_path: Path):
     bbox_ops = BBoxOps()
     ocr_json = json.load(open(ocr_json_path, "r", encoding="utf-8"))
     page_preds = ocr_json[0]["page_preds"]
+    page_texts = ''
+    page_bboxes = []
     for page_pred in page_preds:
         layout_class = page_pred["layout_class"]['layout_class']
+        if layout_class != '参数表':
+            continue
         ocr_res = page_pred["ocr_res"]
         texts = [ocr_res["words"] for ocr_res in ocr_res]
         bboxes = [bbox_ops.xyxy_to_four_points(ocr_res["location"]) for ocr_res in ocr_res]
         reordered_texts, reordered_bboxes = bbox_ops.process_ocr_to_text(bboxes, texts)
-        return reordered_texts, reordered_bboxes, layout_class
+        page_texts += '\n' + reordered_texts
+        page_bboxes += [None] + reordered_bboxes
+    return page_texts, page_bboxes
 
 
 def load_material_list_gt(gt_excel_path: Path):
@@ -291,10 +297,8 @@ if __name__ == "__main__":
     all_imgnames = list()
     ocr_json_paths = list(ocr_json_dir.glob("*.json"))[1:]
     for ocr_json_path in ocr_json_paths:
-        page_texts, page_bboxes, layout_class = load_ocr_json(ocr_json_path)
-        if layout_class != '参数表':
-            continue
-
+        page_texts, page_bboxes = load_material_list_json(ocr_json_path)
+        filename = ocr_json_path.stem
         material_list_gt = load_material_list_gt(gt_excel_dir / f"{ocr_json_path.stem}.xlsx")
         if material_list_gt is None:
             continue
@@ -304,11 +308,21 @@ if __name__ == "__main__":
         examples = load_examples('./examples/cgn/examples_cgn.json')
 
         result = run_extraction(page_texts, prompt_description, examples)
+
+        save_name = f"{filename}_extraction_results.jsonl"
+        lx.io.save_annotated_documents([result], output_name=save_name, output_dir=save_dir)
+        # Generate the visualization from the file
+        html_content = lx.visualize(save_dir / save_name)
+        with open(save_dir / f"{filename}_visualization.html", "w") as f:
+            if hasattr(html_content, 'data'):
+                f.write(html_content.data)  # For Jupyter/Colab
+            else:
+                f.write(html_content)
         r = defaultdict(list)
         for item in result.extractions:
             r[item.extraction_class].append(item.extraction_text)
         # print(material_list_gt)
-        filename = ocr_json_path.stem
+        
         save_file = save_dir / f"{filename}_score.json"
         mfh, mh = _score(
             {filename: material_list_gt},
